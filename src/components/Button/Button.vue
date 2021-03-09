@@ -5,33 +5,33 @@
 </template>
 <script>
 export default {
-  'name': 'Button',
+  name: 'Button',
   data() {
     return {
-      'preCls': 'sq-btn'
+      preCls: 'sq-btn'
     };
   },
-  'props': {
-    'isDisabled': Boolean,
-    'shape': {
-      'type': String,
-      'default': '' //'circle'圆角, 'rectangle'直角
+  props: {
+    isDisabled: Boolean,
+    shape: {
+      type: String,
+      default: '' //'circle'圆角, 'rectangle'直角
     },
-    'type': {
-      'type': String,
-      'default': 'default', //['default',success', 'warning', 'error', 'info']
+    type: {
+      type: String,
+      default: 'default', //['default',success', 'warning', 'error', 'info']
       validator(value) {
         let types = ['default', 'success', 'warning', 'error', 'info'];
 
         return types.includes(value) || !value;
       }
     },
-    'size': {
-      'type': String,
-      'default': '' //['large', 'medium', 'small']
+    size: {
+      type: String,
+      default: '' //['large', 'medium', 'small']
     }
   },
-  'computed': {
+  computed: {
     classBtn() {
       let { preCls, type, size, shape } = this,
         className = [
@@ -46,7 +46,7 @@ export default {
       return className;
     }
   },
-  'methods': {
+  methods: {
     clickBtn(ev) {
       this.$emit('click', ev);
     }
