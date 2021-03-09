@@ -1,11 +1,11 @@
-var path = require('path')
-var webpack = require('webpack')
-const ExtractTextPlugin = require ('extract-text-webpack-plugin')
+var path = require('path');
+var webpack = require('webpack');
+const ExtractTextPlugin = require ('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
     style: './src/style.js',
-    sq: './src/index.js',
+    sq: './src/index.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -21,7 +21,7 @@ module.exports = {
         use: [
           'vue-style-loader',
           'css-loader'
-        ],
+        ]
       },
       {
         test: /\.scss$/,
@@ -69,13 +69,13 @@ module.exports = {
     hints: false
   },
   devtool: '#eval-source-map'
-}
+};
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
+  module.exports.devtool = '#source-map';
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
-    new ExtractTextPlugin("sq.css",{allChunks: true}),
+    new ExtractTextPlugin("sq.css", {allChunks: true}),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
@@ -90,5 +90,5 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
-  ])
+  ]);
 }
