@@ -6,7 +6,6 @@
 <script>
 export default {
   'name': 'Button',
-  'display': 'Button按钮',
   data() {
     return {
       'preCls': 'sq-btn'
