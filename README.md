@@ -10,9 +10,6 @@ import SunqiUI from 'sunqi-ui'
 Vue.use(SunqiUI)
 ```
 
-
-Vue.component(Select.name, Select)
-Vue.component(Button.name, Button)
 ## Install dependencies
 
 ```bash
